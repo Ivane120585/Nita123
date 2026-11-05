@@ -22,9 +22,6 @@ jobs:
         with:
           dotnet-version: 3.1.x
 
-      - name: Install .NET Core 3.1 native dependencies
-        run: sudo apt-get update && sudo apt-get install -y libicu-dev
-
       - name: Restore
         run: dotnet restore BankSystem.sln
         working-directory: src
@@ -36,6 +33,8 @@ jobs:
       - name: Test
         run: dotnet test BankSystem.sln --no-restore --no-build --logger:"liquid.md;LogFileName=${{ github.workspace }}/TestReport.md;Title=Test Run ${{ github.run_number }}"
         working-directory: src
+        env:
+          DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "1"
 
       - name: Upload test report
         if: always()
