@@ -2,6 +2,7 @@
 {
     using AutoMapper;
     using Common.AutoMapping.Profiles;
+    using Microsoft.Extensions.Logging.Abstractions;
 
     public static class TestSetup
     {
@@ -18,7 +19,9 @@
                     return mapper;
                 }
 
-                var config = new MapperConfiguration(cfg => { cfg.AddProfile<DefaultProfile>(); });
+                var config = new MapperConfiguration(
+                    cfg => { cfg.AddProfile<DefaultProfile>(); },
+                    NullLoggerFactory.Instance);
 
                 mapper = config.CreateMapper();
                 mapperInitialized = true;

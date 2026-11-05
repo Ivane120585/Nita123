@@ -38,7 +38,7 @@
                     throw new ApplicationException("CentralApiConfiguration is invalid");
                 }
             });
-            services.AddAutoMapper(typeof(DefaultProfile));
+            services.AddAutoMapper(cfg => { }, typeof(DefaultProfile));
             services
                 .AddControllersWithViews();
         }

@@ -22,7 +22,7 @@
         {
             var assembly = Assembly.GetAssembly(typeof(IEmailSender));
             AddAssemblyServices(services, assembly);
-            services.AddAutoMapper(typeof(DefaultProfile));
+            services.AddAutoMapper(cfg => { }, typeof(DefaultProfile));
 
             return services;
         }
