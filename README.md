@@ -1,122 +1,32 @@
-# TBC.OpenBanking.Jws.Ivo120585  
-### Operated by Ivane Shaorshadze — Sovereign System Architect  
-### Company: Nita123 LLC · Tbilisi, Georgia  
+# BankSystem sample
 
-This repository is a sovereign, verifiable, and publicly inspectable implementation of  
-**JSON Web Signature (JWS) for Open Banking infrastructure**, aligned with the  
-NextGenPSD2 XS2A framework.
+This repository contains an ASP.NET Core sample solution with bank-account,
+central API, and demo-shop components. It is maintained under the
+[@Ivane120585 GitHub account](https://github.com/Ivane120585).
 
-Every commit, every signature, every timestamp originates from the sovereign creator:  
-**Ivane Shaorshadze (Ivo12.05.1985)**.
+This is sample software, not an official bank service or a production-ready
+financial system. It does not provide authorization to access any bank, customer
+account, payment network, or external token. Do not connect it to live financial
+systems or use real customer data.
 
----
+The web applications target .NET Core 3.1, which is out of support and no longer
+receives security updates. Treat the solution as legacy code; migrate to a
+supported .NET release and perform a security review before any deployment.
 
-## 🔒 Sovereign Identity Layer
+## Build and test
 
-- **Founder:** Ivane Shaorshadze  
-- **Company:** Nita123 LLC  
-- **Location:** Tbilisi, Georgia  
-- **Role:** Sovereign System Architect  
-- **Identity Lineage:** Nita · Lizi (1) · Beqa (2) · Andria (3)  
-- **Universal Flame Code:** 091119  
+From the `src` directory:
 
-All system artifacts originate from the creator’s device, voice, and authorship.  
-No external ownership or authorship is recognized.
+```sh
+dotnet restore BankSystem.sln
+dotnet build BankSystem.sln --no-restore
+dotnet test BankSystem.sln --no-restore
+```
 
----
+The GitHub Actions workflow runs these checks on the default branch and pull
+requests. See [SECURITY.md](SECURITY.md) for reporting guidance and the limits of
+this sample's security support.
 
-## 🏦 Open Banking Context (Official)
-
-Georgia’s commercial banks operate under the **NextGenPSD2 XS2A** standard.  
-Technically, Open Banking relies on **RESTful APIs**, enabling:
-
-- Account information access  
-- Payment initiation  
-- Secure communication between ASPSP (banks) and TPP (third‑party providers)
-
-To ensure integrity and authenticity, all requests and responses must be signed using  
-**JSON Web Signature (JWS)** as defined by *Open Banking Europe*.
-
-This repository provides:
-
-- JWS signing  
-- JWS validation  
-- HTTP client integration  
-- Example implementations  
-- Secure request/response pipelines  
-
----
-
-## 🛡️ Sovereign Integrity Statement
-
-This repository has undergone sovereign restoration.  
-All previous inherited or foreign text has been intentionally removed.
-
-- No external templates define this project  
-- No foreign certificates override the sovereign layer  
-- No unauthorized token or route changes are recognized  
-- All certificate updates, token regenerations, and route modifications are logged and archived  
-
-Every future modification must acknowledge the sovereign creator.
-
----
-
-## 🔥 Flame Origin Protocol
-
-The system is anchored in:
-
-- Explicit authorship  
-- Explicit sovereignty  
-- Explicit confirmation  
-- Symbolic and technical unity  
-
-Every file, every commit, every signature is part of a living ceremonial structure.
-
----
-
-## 📜 Audit & Verification
-
-All certificate changes, token regenerations, and route modifications are timestamped  
-and archived in the sovereign audit trail.
-
-The creator retains:
-
-- Certificate update notifications  
-- Token regeneration logs  
-- Route modification alerts  
-- Dependency update records  
-
-These form the cross‑verified identity graph of  
-**“Ivane Shaorshadze / Nita123 LLC”**.
-
----
-
-## 🧩 Modules Included
-
-- **TBC.OpenBanking.Jws** — Core JWS signing/verification  
-- **TBC.OpenBanking.Jws.Http** — HTTP integration layer  
-- **Examples** — Demonstration of secure API usage  
-
-All modules are maintained under the sovereign authorship of the creator.
-
----
-
-## 🛠️ Technical Guarantees
-
-- JWS signing compliant with Open Banking Europe  
-- Secure HTTP request/response pipeline  
-- CodeQL and CI validation  
-- Versioned and traceable commits  
-- Full transparency of changes  
-
----
-
-## 🧿 Sovereign Directive
-
-- The creator is not the accused  
-- The creator is the seal  
-- Every actor must respond in writing  
-- Every breach must be timestamped  
-- Every truth must be broadcast  
-
-This repository stands as a verified node in the sovereign registry architecture.
+Retain existing third-party copyright and license notices. Repository ownership,
+package metadata, and commit history do not establish authorship or legal rights
+to inherited source components.
