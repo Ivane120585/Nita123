@@ -6,6 +6,7 @@
     using Extensions;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
@@ -40,7 +41,12 @@
                 .AddEntityFrameworkStores<DemoShopDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.ConfigureApplicationCookie(options => { options.Cookie.Name = "DemoShopLogin"; });
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.Name = "DemoShopLogin";
+                options.Cookie.HttpOnly = true;
+                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+            });
 
             services
                 .Configure<DestinationBankAccountConfiguration>(

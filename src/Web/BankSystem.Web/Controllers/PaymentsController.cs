@@ -64,6 +64,8 @@ namespace BankSystem.Web.Controllers
                 new CookieOptions
                 {
                     SameSite = SameSiteMode.Lax,
+                    HttpOnly = true,
+                    Secure = true,
                     IsEssential = true,
                     MaxAge = TimeSpan.FromMinutes(CookieValidityInMinutes)
                 });

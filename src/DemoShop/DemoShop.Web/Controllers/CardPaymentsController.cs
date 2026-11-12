@@ -3,12 +3,14 @@ namespace DemoShop.Web.Controllers
     using System.Threading.Tasks;
     using Configuration;
     using DemoShop.Models;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Options;
     using Models;
     using PaymentHelpers;
     using Services.Interfaces;
 
+    [Authorize]
     public class CardPaymentsController : Controller
     {
         private const string PaymentUnsuccessfulError = "Payment failed. Please check your card details and try again.";
@@ -48,6 +50,7 @@ namespace DemoShop.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Pay(string id, CardPaymentBindingModel model)
         {
             var order = await this.ordersService.GetByIdAsync(id);
