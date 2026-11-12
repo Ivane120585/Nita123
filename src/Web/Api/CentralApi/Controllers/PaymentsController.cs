@@ -54,6 +54,7 @@ namespace CentralApi.Controllers
                 {
                     SameSite = SameSiteMode.Lax,
                     HttpOnly = true,
+                    Secure = true,
                     IsEssential = true,
                     MaxAge = TimeSpan.FromMinutes(CookieValidityInMinutes)
                 });
